@@ -1,6 +1,6 @@
 # Unidad 4
 
-## Password hashing
+## Hashing
 
 Un hash es una función criptográfica que toma una entrada (también conocida como mensaje o datos) y la transforma en una cadena de caracteres de longitud fija. El objetivo principal de una función hash es producir un resumen único y distintivo de los datos de entrada.
 
@@ -45,6 +45,32 @@ print("Hash con SHA-512:", hash_sha512)
 print("Hash con MD5:", hash_md5)
 ```
 
+## Ejercicio 1
+---
+El algoritmo de hash más simple se conoce como "hashing sin criptografía" o "hashing no seguro". Este tipo de algoritmo no está diseñado para la seguridad, sino más bien para la velocidad y la simplicidad. No se recomienda utilizarlo en aplicaciones donde se requiere una seguridad adecuada, ya que es más susceptible a colisiones y ataques de fuerza bruta.
 
+### El algoritmo
 
-> 
+* Inicializa una variable para almacenar el valor hash.
+* Recorre los caracteres de la entrada de datos.
+* Para cada carácter, conviértelo en un valor numérico.
+* Agrega el valor numérico al valor hash existente.
+* Continúa recorriendo y sumando los valores numéricos de los caracteres hasta que hayas procesado todos los caracteres de la entrada de datos.
+* Devuelve el valor hash resultante.
+
+## Ejercicio 1
+---
+Desarrolla una función en Python llamada complex_hash que tome una cadena de texto como entrada y aplique un algoritmo de hashing por multiplicación para generar un valor hash único. A continuación, se describen los pasos del algoritmo:
+
+Define una función llamada complex_hash que tome una cadena de texto como parámetro de entrada.
+
+- Inicializa una variable llamada hash_value en 0 para almacenar el valor hash resultante.
+- Elige un número primo, en este caso, el número 31, como constante. Este número ayudará a distribuir mejor los valores hash generados.
+- Recorre cada carácter de la cadena de texto utilizando un bucle. Para cada carácter, realiza los siguientes pasos:
+    1. Multiplica el valor hash actual, hash_value, por la constante.
+    2. Suma el valor numérico del carácter actual utilizando la función ord() para obtener su representación numérica.
+    3. Realiza una operación AND entre el resultado de la suma y 0xFFFFFFFF para limitar el valor hash a 32 bits.
+    4. Asigna el resultado de la operación anterior a la variable hash_value.
+- Una vez se hayan recorrido todos los caracteres de la cadena de texto, retorna el valor hash resultante almacenado en la variable hash_value.
+- Ejecuta un ejemplo utilizando la cadena de texto "Hola, mundo!" y almacena el valor hash resultante en una variable llamada hash_result.
+- Imprime en pantalla el valor hash resultante utilizando la sentencia print.
