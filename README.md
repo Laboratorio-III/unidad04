@@ -58,7 +58,7 @@ El algoritmo de hash más simple se conoce como "hashing sin criptografía" o "h
 * Continúa recorriendo y sumando los valores numéricos de los caracteres hasta que hayas procesado todos los caracteres de la entrada de datos.
 * Devuelve el valor hash resultante.
 
-## Ejercicio 1
+## Ejercicio 2
 ---
 Desarrolla una función en Python llamada complex_hash que tome una cadena de texto como entrada y aplique un algoritmo de hashing por multiplicación para generar un valor hash único. A continuación, se describen los pasos del algoritmo:
 
