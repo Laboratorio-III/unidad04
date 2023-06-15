@@ -9,3 +9,4 @@ def root():
 @app.get("/valor/{var}")
 def valor(var):
     return {"valor": var}
+    
